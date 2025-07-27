@@ -46,53 +46,12 @@ try {
   throw new Error(e);
 }
 
-try {
-  const packageJson = fs.readFileSync('package.json');
-  packetJsonVersion = JSON.parse(packageJson).version;
-  console.log(`mempool version ${packetJsonVersion}`);
-} catch (e) {
-  throw new Error(e);
-}
-
 for (setting in configContent) {
   settings.push({
     key: setting,
     value: configContent[setting]
   });
 }
-
-if (process.env.DOCKER_COMMIT_HASH) {
-  gitCommitHash = process.env.DOCKER_COMMIT_HASH;
-} else {
-  try {
-    const gitRevParse = spawnSync('git', ['rev-parse', '--short', 'HEAD']);
-    if (!gitRevParse.error) {
-      const output = gitRevParse.stdout.toString('utf-8').replace(/[\n\r\s]+$/, '');
-      gitCommitHash = output ? output : '?';
-      console.log(`mempool revision ${gitCommitHash}`);
-    } else if (gitRevParse.error.code === 'ENOENT') {
-      console.log('git not found, cannot parse git hash');
-      gitCommitHash = '?';
-    }
-  } catch (e) {
-    console.log('Could not load git commit info: ' + e.message);
-    gitCommitHash = '?';
-  }
-}
-
-const newConfig = `(function (window) {
-  window.__env = window.__env || {};${settings.reduce((str, obj) => `${str}
-    window.__env.${obj.key} = ${typeof obj.value === 'string' ? `'${obj.value}'` : obj.value};`, '')}
-    window.__env.GIT_COMMIT_HASH = '${gitCommitHash}';
-    window.__env.PACKAGE_JSON_VERSION = '${packetJsonVersion}';
-  }((typeof global !== 'undefined') ? global : this));`;
-
-const newConfigTemplate = `(function (window) {
-  window.__env = window.__env || {};${settings.reduce((str, obj) => `${str}
-    window.__env.${obj.key} = ${typeof obj.value === 'string' ? `'\${__${obj.key}__}'` : `\${__${obj.key}__}`};`, '')}
-    window.__env.GIT_COMMIT_HASH = '${gitCommitHash}';
-    window.__env.PACKAGE_JSON_VERSION = '${packetJsonVersion}';
-  }(this));`;
 
 function readConfig(path) {
   try {
