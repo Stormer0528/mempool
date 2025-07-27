@@ -43,6 +43,7 @@ interface IConfig {
     ALLOW_UNREACHABLE: boolean;
     PRICE_UPDATES_PER_HOUR: number;
     MAX_TRACKED_ADDRESSES: number;
+    COIN_MARKET_CAP_PRO_KEY: string;
   };
   ESPLORA: {
     REST_API_URL: string;
@@ -214,6 +215,7 @@ const defaults: IConfig = {
     'ALLOW_UNREACHABLE': true,
     'PRICE_UPDATES_PER_HOUR': 1,
     'MAX_TRACKED_ADDRESSES': 1,
+    'COIN_MARKET_CAP_PRO_KEY': 'your-coinmarketcap-pro-key',
   },
   'ESPLORA': {
     'REST_API_URL': 'http://127.0.0.1:3000',
