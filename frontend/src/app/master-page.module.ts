@@ -43,10 +43,10 @@ const routes: Routes = [
         path: 'tx/test',
         component: TestTransactionsComponent,
       },
-      {
-        path: 'about',
-        loadChildren: () => import('@components/about/about.module').then(m => m.AboutModule),
-      },
+      // {
+      //   path: 'about',
+      //   loadChildren: () => import('@components/about/about.module').then(m => m.AboutModule),
+      // },
       {
         path: 'blocks/:page',
         component: BlocksList,
