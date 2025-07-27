@@ -3,11 +3,12 @@ import path from 'path';
 import config from '../config';
 import logger from '../logger';
 import PricesRepository, { ApiPrice, MAX_PRICES } from '../repositories/PricesRepository';
-import BitfinexApi from './price-feeds/bitfinex-api';
-import BitflyerApi from './price-feeds/bitflyer-api';
-import CoinbaseApi from './price-feeds/coinbase-api';
-import GeminiApi from './price-feeds/gemini-api';
-import KrakenApi from './price-feeds/kraken-api';
+// import BitfinexApi from './price-feeds/bitfinex-api';
+// import BitflyerApi from './price-feeds/bitflyer-api';
+// import CoinbaseApi from './price-feeds/coinbase-api';
+// import GeminiApi from './price-feeds/gemini-api';
+// import KrakenApi from './price-feeds/kraken-api';
+import CoinmarketcapApi from './price-feeds/coinmarketcap-api';
 import FreeCurrencyApi from './price-feeds/free-currency-api';
 
 export interface PriceFeed {
@@ -65,11 +66,11 @@ class PriceUpdater {
   constructor() {
     this.latestPrices = this.getEmptyPricesObj();
 
-    this.feeds.push(new BitflyerApi()); // Does not have historical endpoint
-    this.feeds.push(new KrakenApi());
-    this.feeds.push(new CoinbaseApi());
-    this.feeds.push(new BitfinexApi());
-    this.feeds.push(new GeminiApi());
+    this.feeds.push(new CoinmarketcapApi());
+    // this.feeds.push(new KrakenApi());
+    // this.feeds.push(new CoinbaseApi());
+    // this.feeds.push(new BitfinexApi());
+    // this.feeds.push(new GeminiApi());
 
     this.currencyConversionFeed = new FreeCurrencyApi();
     this.setCyclePosition();
@@ -320,7 +321,7 @@ class PriceUpdater {
     }
 
     // Insert Kraken weekly prices
-    await new KrakenApi().$insertHistoricalPrice();
+    await new CoinmarketcapApi().$insertHistoricalPrice();
 
     // Insert missing recent hourly prices
     await this.$insertMissingRecentPrices('day');
