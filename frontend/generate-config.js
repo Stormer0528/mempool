@@ -8,8 +8,6 @@ const GENERATED_CUSTOMIZATION_FILE_NAME = 'src/resources/customize.js';
 
 let settings = [];
 let configContent = {};
-let gitCommitHash = '';
-let packetJsonVersion = '';
 let customConfig;
 let customConfigContent;
 
@@ -52,6 +50,16 @@ for (setting in configContent) {
     value: configContent[setting]
   });
 }
+
+const newConfig = `(function (window) {
+  window.__env = window.__env || {};${settings.reduce((str, obj) => `${str}
+    window.__env.${obj.key} = ${typeof obj.value === 'string' ? `'${obj.value}'` : obj.value};`, '')}
+  }((typeof global !== 'undefined') ? global : this));`;
+
+const newConfigTemplate = `(function (window) {
+  window.__env = window.__env || {};${settings.reduce((str, obj) => `${str}
+    window.__env.${obj.key} = ${typeof obj.value === 'string' ? `'\${__${obj.key}__}'` : `\${__${obj.key}__}`};`, '')}    
+  }(this));`;
 
 function readConfig(path) {
   try {
