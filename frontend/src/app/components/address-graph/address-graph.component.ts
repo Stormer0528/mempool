@@ -244,7 +244,7 @@ export class AddressGraphComponent implements OnChanges, OnDestroy {
         ],
         selected: this.selected,
         formatter: function (name) {
-          return name === 'Fiat' ? 'USD' : 'BTC';
+          return name === 'Fiat' ? 'USD' : 'TXC';
         }
       } : undefined,
       tooltip: {
@@ -296,20 +296,20 @@ export class AddressGraphComponent implements OnChanges, OnDestroy {
 
           if (btcData.length && fiatData.length) {
             tooltip += `<div style="display: flex; justify-content: space-between; color: ${btcColor}">
-              <span style="text-align: left; margin-right: 10px;">${btcSymbol} ${formatBTC(btcVal, 4)} BTC</span>
+              <span style="text-align: left; margin-right: 10px;">${btcSymbol} ${formatBTC(btcVal, 4)} TXC</span>
               <span style="text-align: right;">${fiatSymbol} ${formatFiat(fiatVal)}</span>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <span style="text-align: left; margin-right: 10px;">${formatBTC(btcData[0].data[1], 4)} BTC</span>
+              <span style="text-align: left; margin-right: 10px;">${formatBTC(btcData[0].data[1], 4)} TXC</span>
               <span style="text-align: right;">${formatFiat(fiatData[0].data[1])}</span>
             </div>`;
           } else if (btcData.length) {
-            tooltip += `<span style="color: ${btcColor}">${btcSymbol} ${formatBTC(btcVal, 8)} BTC</span><br>
-              <span>${formatBTC(data[0].data[1], 8)} BTC</span>`;
+            tooltip += `<span style="color: ${btcColor}">${btcSymbol} ${formatBTC(btcVal, 8)} TXC</span><br>
+              <span>${formatBTC(data[0].data[1], 8)} TXC</span>`;
           } else {
             if (this.selected[$localize`:@@7e69426bd97a606d8ae6026762858e6e7c86a1fd:Balance`]) {
               tooltip += `<div style="display: flex; justify-content: space-between;">
-                <span style="text-align: left; margin-right: 10px;">${formatBTC(data[0].data[3], 4)} BTC</span>
+                <span style="text-align: left; margin-right: 10px;">${formatBTC(data[0].data[3], 4)} TXC</span>
                 <span style="text-align: right;">${formatFiat(data[0].data[1])}</span>
               </div>`;
             } else {
@@ -339,21 +339,21 @@ export class AddressGraphComponent implements OnChanges, OnDestroy {
             formatter: (val): string => {
               let valSpan = maxValue - (this.period === 'all' ? 0 : minValue);
               if (valSpan > 100_000_000_000) {
-                return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 0, undefined, true)} BTC`;
+                return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 0, undefined, true)} TXC`;
               }
               else if (valSpan > 1_000_000_000) {
-                return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 2, undefined, true)} BTC`;
+                return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 2, undefined, true)} TXC`;
               } else if (valSpan > 100_000_000) {
-                return `${(val / 100_000_000).toFixed(1)} BTC`;
+                return `${(val / 100_000_000).toFixed(1)} TXC`;
               } else if (valSpan > 10_000_000) {
-                return `${(val / 100_000_000).toFixed(2)} BTC`;
+                return `${(val / 100_000_000).toFixed(2)} TXC`;
               } else if (valSpan > 1_000_000) {
                 if (maxValue > 100_000_000_000) {
-                  return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 3, undefined, true)} BTC`;
+                  return `${this.amountShortenerPipe.transform(Math.round(val / 100_000_000), 3, undefined, true)} TXC`;
                 }
-                return `${(val / 100_000_000).toFixed(3)} BTC`;
+                return `${(val / 100_000_000).toFixed(3)} TXC`;
               } else {
-                return `${this.amountShortenerPipe.transform(val, 0, undefined, true)} sats`;
+                return `${this.amountShortenerPipe.transform(val, 0, undefined, true)} cros`;
               }
             }
           },
