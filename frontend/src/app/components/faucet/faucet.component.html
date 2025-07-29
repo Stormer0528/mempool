@@ -61,7 +61,7 @@
             <div class="form-group mb-0">
               <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" i18n="amount-sats">Amount (sats)</span>
+                  <span class="input-group-text" i18n="amount-sats">Amount (cros)</span>
                 </div>
                 <input type="number" class="form-control" [class]="{invalid: invalidAmount}" formControlName="satoshis" id="satoshis">
                 <div class="button-group">
@@ -72,8 +72,8 @@
               </div>
               <div class="text-danger text-left" *ngIf="invalidAmount">
                 <div *ngIf="amount?.errors?.['required']">Amount is required</div>
-                <div *ngIf="amount?.errors?.['min']">Minimum is {{ amount?.errors?.['min'].min | number }} tSats</div>
-                <div *ngIf="amount?.errors?.['max']">Maximum is {{ amount?.errors?.['max'].max | number }} tSats</div>
+                <div *ngIf="amount?.errors?.['min']">Minimum is {{ amount?.errors?.['min'].min | number }} tCros</div>
+                <div *ngIf="amount?.errors?.['max']">Maximum is {{ amount?.errors?.['max'].max | number }} tCros</div>
               </div>
               <div class="input-group input-group-lg mt-2">
                 <div class="input-group-prepend">

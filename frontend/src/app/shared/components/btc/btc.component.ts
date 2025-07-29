@@ -38,7 +38,7 @@ export class BtcComponent implements OnInit, OnChanges {
       this.unit = 'TXC'
     } else {
       this.value = Math.round(this.satoshis);
-      this.unit = 'sats'
+      this.unit = 'cros'
     }
   }
 }
