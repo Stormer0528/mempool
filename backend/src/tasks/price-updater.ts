@@ -248,7 +248,7 @@ class PriceUpdater {
       if (prices.length === 0) {
         this.latestPrices[currency] = -1;
       } else {
-        this.latestPrices[currency] = Math.round(getMedian(prices));
+        this.latestPrices[currency] = getMedian(prices);
       }
     }
 
