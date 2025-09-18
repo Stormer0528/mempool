@@ -192,22 +192,22 @@ export const languages: Language[] = [
 export const specialBlocks = {
   '0': {
     labelEvent: 'Genesis',
-    labelEventCompleted: 'The Genesis of Bitcoin',
+    labelEventCompleted: 'The Genesis of Texitcoin',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '210000': {
-    labelEvent: 'Bitcoin\'s 1st Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 25 BTC per block',
+  '695662': {
+    labelEvent: 'Texitcoin\'s 1st Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 127 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '420000': {
-    labelEvent: 'Bitcoin\'s 2nd Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 12.5 BTC per block',
+  '1391324': {
+    labelEvent: 'Texitcoin\'s 2nd Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 63.5 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '630000': {
-    labelEvent: 'Bitcoin\'s 3rd Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 6.25 BTC per block',
+  '2086986': {
+    labelEvent: 'Texitcoin\'s 3rd Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 31.75 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
   '709632': {
@@ -215,64 +215,64 @@ export const specialBlocks = {
     labelEventCompleted: 'Taproot 🌱 has been activated!',
     networks: ['mainnet'],
   },
-  '840000': {
-    labelEvent: 'Bitcoin\'s 4th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 3.125 BTC per block',
+  '2782648': {
+    labelEvent: 'Texitcoin\'s 4th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 15.875 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '1050000': {
-    labelEvent: 'Bitcoin\'s 5th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 1.5625 BTC per block',
+  '3478310': {
+    labelEvent: 'Texitcoin\'s 5th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 7.9375 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '1260000': {
-    labelEvent: 'Bitcoin\'s 6th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.78125 BTC per block',
+  '4173972': {
+    labelEvent: 'Texitcoin\'s 6th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 3.96875 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '1470000': {
-    labelEvent: 'Bitcoin\'s 7th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.390625 BTC per block',
+  '4869634': {
+    labelEvent: 'Texitcoin\'s 7th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 1.984375 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '1680000': {
-    labelEvent: 'Bitcoin\'s 8th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.1953125 BTC per block',
+  '5565296': {
+    labelEvent: 'Texitcoin\'s 8th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.9921875 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '1890000': {
-    labelEvent: 'Bitcoin\'s 9th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.09765625 BTC per block',
+  '6260958': {
+    labelEvent: 'Texitcoin\'s 9th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.49609375 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '2100000': {
-    labelEvent: 'Bitcoin\'s 10th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.04882812 BTC per block',
+  '6956620': {
+    labelEvent: 'Texitcoin\'s 10th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.24804687 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '2310000': {
-    labelEvent: 'Bitcoin\'s 11th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.02441406 BTC per block',
+  '7652282': {
+    labelEvent: 'Texitcoin\'s 11th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.12402343 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '2520000': {
-    labelEvent: 'Bitcoin\'s 12th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.01220703 BTC per block',
+  '8347944': {
+    labelEvent: 'Texitcoin\'s 12th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.06201171 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '2730000': {
-    labelEvent: 'Bitcoin\'s 13th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.00610351 BTC per block',
+  '9043606': {
+    labelEvent: 'Texitcoin\'s 13th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.03100585 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '2940000': {
-    labelEvent: 'Bitcoin\'s 14th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.00305175 BTC per block',
+  '9739268': {
+    labelEvent: 'Texitcoin\'s 14th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.01550292 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
-  '3150000': {
-    labelEvent: 'Bitcoin\'s 15th Halving',
-    labelEventCompleted: 'Block Subsidy has halved to 0.00152587 BTC per block',
+  '10434930': {
+    labelEvent: 'Texitcoin\'s 15th Halving',
+    labelEventCompleted: 'Block Subsidy has halved to 0.00775146 TXC per block',
     networks: ['mainnet', 'testnet', 'testnet4'],
   }
 };
