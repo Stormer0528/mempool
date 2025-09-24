@@ -195,6 +195,11 @@ export const specialBlocks = {
     labelEventCompleted: 'The Genesis of Texitcoin',
     networks: ['mainnet', 'testnet', 'testnet4'],
   },
+  '73000': {
+    labelEvent: 'Texitcoin\'s Merge Mining Activation',
+    labelEventCompleted: 'Texitcoin\'s Merge Mining has been activated!',
+    networks: ['mainnet', 'testnet', 'testnet4'],
+  },
   '695662': {
     labelEvent: 'Texitcoin\'s 1st Halving',
     labelEventCompleted: 'Block Subsidy has halved to 127 TXC per block',
