@@ -33,7 +33,7 @@ interface DiffShape {
   expected: boolean;
 }
 
-const EPOCH_BLOCK_LENGTH = 2016; // Bitcoin mainnet
+const EPOCH_BLOCK_LENGTH = 4; // Bitcoin mainnet
 
 @Component({
   selector: 'app-difficulty',
@@ -118,7 +118,7 @@ export class DifficultyComponent implements OnInit {
           this.expectedHeight = newExpectedHeight;
           this.currentHeight = this.stateService.latestBlockHeight;
           this.currentIndex = this.currentHeight - this.epochStart;
-          this.expectedIndex = Math.min(this.expectedHeight - this.epochStart, 2016) - 1;
+          this.expectedIndex = Math.min(this.expectedHeight - this.epochStart, 4) - 1;
           this.difference = this.currentIndex - this.expectedIndex;
 
           this.shapes = [];
@@ -131,13 +131,13 @@ export class DifficultyComponent implements OnInit {
           this.shapes = this.shapes.concat(this.blocksToShapes(
             this.expectedIndex + 1, this.currentIndex, 'ahead', false
           ));
-          if (this.currentIndex < 2015) {
+          if (this.currentIndex < 4) {
             this.shapes = this.shapes.concat(this.blocksToShapes(
               this.currentIndex + 1, this.currentIndex + 1, 'next', (this.expectedIndex > this.currentIndex)
             ));
           }
           this.shapes = this.shapes.concat(this.blocksToShapes(
-            Math.max(this.currentIndex + 2, this.expectedIndex + 1), 2105, 'remaining', false
+            Math.max(this.currentIndex + 2, this.expectedIndex + 1), 4, 'remaining', false
           ));
         }
 
@@ -173,36 +173,18 @@ export class DifficultyComponent implements OnInit {
   }
 
   blocksToShapes(start: number, end: number, status: BlockStatus, expected: boolean = false): DiffShape[] {
-    const startY = start % 9;
-    const startX = Math.floor(start / 9);
-    const endY = (end % 9);
-    const endX = Math.floor(end / 9);
+    const startY = 0;
+    const startX = Math.floor(start);
+    const endY = 0;
+    const endX = Math.floor(end);
 
     if (startX > endX) {
       return [];
     }
 
-    if (startX === endX) {
-      return [{
-        x: startX, y: startY, w: 1, h: 1 + endY - startY, status, expected
-      }];
-    }
-
-    const shapes = [];
-    shapes.push({
-      x: startX, y: startY, w: 1, h: 9 - startY, status, expected
-    });
-    shapes.push({
-      x: endX, y: 0, w: 1, h: endY + 1, status, expected
-    });
-
-    if (startX < endX - 1) {
-      shapes.push({
-        x: startX + 1, y: 0, w: endX - startX - 1, h: 9, status, expected
-      });
-    }
-
-    return shapes;
+    return [{
+      x: startX, y: startY, w: endX - startX + 1, h: 1 , status, expected
+    }];
   }
 
   setMode(mode: 'difficulty' | 'halving'): boolean {
