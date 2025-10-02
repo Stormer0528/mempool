@@ -12,7 +12,7 @@
         <div id="disclaimer">
           <table *ngIf="!mobileViewport"><tr><td><app-svg-images name="warning" class="disclaimer-warning" viewBox="0 0 304 304" fill="#ffc107" width="50" height="50"></app-svg-images></td><td> <ng-container *ngTemplateOutlet="faqDisclaimer"></ng-container></td></tr></table>
           <div *ngIf="mobileViewport"><app-svg-images name="warning" class="disclaimer-warning" viewBox="0 0 304 304" fill="#ffc107" width="50" height="50"></app-svg-images><ng-container *ngTemplateOutlet="faqDisclaimer"></ng-container></div>
-          <ng-template #faqDisclaimer i18n="faq.big-disclaimer"><p><b>TXCmempool.com merely provides data about the Texitcoin network.</b> It cannot help you with retrieving funds, wallet issues, etc.</p><p>For any such requests, you need to get in touch with the entity that helped make the transaction (wallet software, exchange company, etc).</p></ng-template>
+          <ng-template #faqDisclaimer i18n="faq.big-disclaimer"><p><b>mempool.texitcoin.org merely provides data about the Texitcoin network.</b> It cannot help you with retrieving funds, wallet issues, etc.</p><p>For any such requests, you need to get in touch with the entity that helped make the transaction (wallet software, exchange company, etc).</p></ng-template>
         </div>
 
         <div class="doc-item-container" *ngFor="let item of faq">
@@ -43,12 +43,12 @@
           <p>Get higher API limits with <span class="no-line-break">Mempool Enterprise®</span></p>
           <div class="button-group">
             <a class="btn btn-small btn-secondary" (click)="showMobileEnterpriseUpsell = false">No Thanks</a>
-            <a class="btn btn-small btn-purple" href="https://txcmempool.com/enterprise">More Info <fa-icon [icon]="['fas', 'angle-right']" [styles]="{'font-size': '12px'}"></fa-icon></a>
+            <a class="btn btn-small btn-purple" href="https://mempool.texitcoin.org/enterprise">More Info <fa-icon [icon]="['fas', 'angle-right']" [styles]="{'font-size': '12px'}"></fa-icon></a>
           </div>
         </div>
 
         <p class="doc-welcome-note">Below is a reference for the Texitcoin <ng-container i18n="api-docs.title">REST API service</ng-container>.</p>
-        <p class="doc-welcome-note api-note" *ngIf="officialMempoolInstance">Note that we enforce rate limits. If you exceed these limits, you will get an HTTP 429 error. If you repeatedly exceed the limits, you may be banned from accessing the service altogether. Consider an <a href="https://txcmempool.com/enterprise">enterprise sponsorship</a> if you need higher API limits.</p>
+        <p class="doc-welcome-note api-note" *ngIf="officialMempoolInstance">Note that we enforce rate limits. If you exceed these limits, you will get an HTTP 429 error. If you repeatedly exceed the limits, you may be banned from accessing the service altogether. Consider an <a href="https://mempool.texitcoin.org/enterprise">enterprise sponsorship</a> if you need higher API limits.</p>
 
         <div class="doc-item-container" *ngFor="let item of restDocs">
           <div *ngIf="!item.hasOwnProperty('options') || ( item.hasOwnProperty('options') && item.options.hasOwnProperty('officialOnly') && item.options.officialOnly && officialMempoolInstance ) || ( item.hasOwnProperty('options') && item.options.hasOwnProperty('electrsOnly') && item.options.electrsOnly && runningElectrs )">
@@ -120,12 +120,12 @@
           <p>Get higher API limits with <span class="no-line-break">Mempool Enterprise®</span></p>
           <div class="button-group">
             <a class="btn btn-small btn-secondary" (click)="showMobileEnterpriseUpsell = false">No Thanks</a>
-            <a class="btn btn-small btn-purple" href="https://txcmempool.com/enterprise">More Info <fa-icon [icon]="['fas', 'angle-right']" [styles]="{'font-size': '12px'}"></fa-icon></a>
+            <a class="btn btn-small btn-purple" href="https://mempool.texitcoin.org/enterprise">More Info <fa-icon [icon]="['fas', 'angle-right']" [styles]="{'font-size': '12px'}"></fa-icon></a>
           </div>
         </div>
 
         <p class="doc-welcome-note">Below is a reference for the Texitcoin <ng-container i18n="api-docs.title-websocket">Websocket service</ng-container> running at {{ websocketUrl(network.val) }}.</p>
-        <p class="doc-welcome-note api-note" *ngIf="officialMempoolInstance">Note that usage limits apply to our WebSocket API. Consider an <a href="https://txcmempool.com/enterprise">enterprise sponsorship</a> if you need higher API limits, such as higher tracking limits.</p>
+        <p class="doc-welcome-note api-note" *ngIf="officialMempoolInstance">Note that usage limits apply to our WebSocket API. Consider an <a href="https://mempool.texitcoin.org/enterprise">enterprise sponsorship</a> if you need higher API limits, such as higher tracking limits.</p>
 
         <div class="doc-item-container" *ngFor="let item of wsDocs">
           <div *ngIf="!item.hasOwnProperty('options') || ( item.hasOwnProperty('options') && item.options.hasOwnProperty('officialOnly') && item.options.officialOnly && officialMempoolInstance )">
@@ -158,7 +158,7 @@
           <p>{{electrsPort}}</p>
           <p class="subtitle">SSL</p>
           <p>Enabled</p>
-          <p class="note" *ngIf="network.val !== 'signet' && network.val !== 'testnet4'">Electrum RPC interface for <a href="/signet/docs/api/electrs">Bitcoin Signet</a> and <a href="/testnet4/docs/api/electrs">Bitcoin Testnet4</a> is publicly available. Electrum RPC interface for all other networks is available to <a href='https://txcmempool.com/enterprise'>sponsors</a> only—whitelisting is required.</p>
+          <p class="note" *ngIf="network.val !== 'signet' && network.val !== 'testnet4'">Electrum RPC interface for <a href="/signet/docs/api/electrs">Bitcoin Signet</a> and <a href="/testnet4/docs/api/electrs">Bitcoin Testnet4</a> is publicly available. Electrum RPC interface for all other networks is available to <a href='https://mempool.texitcoin.org/enterprise'>sponsors</a> only—whitelisting is required.</p>
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@
 </ng-template>
 
 <ng-template type="what-is-a-mempool-explorer">
-  <p>A mempool explorer is a tool that enables you to view real-time and historical information about a node's mempool, visualize its transactions, and search and view those transactions.</p><p>The txctxcmempool.com website invented the concept of visualizing a Texitcoin node's mempool as <b>projected blocks</b>. These blocks are the inspiration for our half-filled block logo.</p><p>Projected blocks are on the left of the dotted white line, and confirmed blocks are on the right.</p>
+  <p>A mempool explorer is a tool that enables you to view real-time and historical information about a node's mempool, visualize its transactions, and search and view those transactions.</p><p>The mempool.texitcoin.org website invented the concept of visualizing a Texitcoin node's mempool as <b>projected blocks</b>. These blocks are the inspiration for our half-filled block logo.</p><p>Projected blocks are on the left of the dotted white line, and confirmed blocks are on the right.</p>
   <div class="blockchain-wrapper" [dir]="timeLtr ? 'rtl' : 'ltr'" [class.time-ltr]="timeLtr">
     <div class="position-container">
       <span>
@@ -219,7 +219,7 @@
 </ng-template>
 
 <ng-template type="how-to-get-transaction-confirmed-quickly">
-  <p>To get your transaction confirmed quicker, you will need to increase its effective feerate.</p><p>If your transaction was created with RBF enabled, your stuck transaction can simply be replaced with a new one that has a higher fee. Otherwise, if you control any of the stuck transaction's outputs, you can use CPFP to increase your stuck transaction's effective feerate.</p><p>If you are not sure how to do RBF or CPFP, work with the tool you used to make the transaction (wallet software, exchange company, etc).</p><p>Another option to get your transaction confirmed more quickly is <a [href]="[ isMempoolSpaceBuild ? '/accelerator' : 'https://txcmempool.com/accelerator']" [target]="isMempoolSpaceBuild ? '' : 'blank'">Mempool Accelerator®</a>.</p>
+  <p>To get your transaction confirmed quicker, you will need to increase its effective feerate.</p><p>If your transaction was created with RBF enabled, your stuck transaction can simply be replaced with a new one that has a higher fee. Otherwise, if you control any of the stuck transaction's outputs, you can use CPFP to increase your stuck transaction's effective feerate.</p><p>If you are not sure how to do RBF or CPFP, work with the tool you used to make the transaction (wallet software, exchange company, etc).</p><p>Another option to get your transaction confirmed more quickly is <a [href]="[ isMempoolSpaceBuild ? '/accelerator' : 'https://mempool.texitcoin.org/accelerator']" [target]="isMempoolSpaceBuild ? '' : 'blank'">Mempool Accelerator®</a>.</p>
 </ng-template>
 
 <ng-template type="how-prevent-stuck-transaction">
@@ -251,14 +251,14 @@
 </ng-template>
 
 <ng-template type="how-big-is-mempool-used-by-mempool-space">
-  <p>txcmempool.com uses multiple Texitcoin nodes to obtain data: some with the default 300MB mempool memory limit (call these Small Nodes) and others with a much larger mempool memory limit (call these Big Nodes).</p>
-  <p>Many nodes on the Texitcoin network are configured to run with the default 300MB mempool memory setting. When all 300MB of memory are used up, such nodes will reject transactions below a certain threshold feerate. Running Small Nodes allows txcmempool.com to tell you what this threshold feerate is—this is the "Purging" feerate that shows on the front page when mempools are full, which you can use to be reasonably sure that your transaction will be widely propagated.</p>
-    <p>Big Node mempools are so big that they don't need to reject (or purge) transactions. Such nodes allow for txcmempool.com to provide you with information on any pending transaction it has received—no matter how congested the mempool is, and no matter how low-feerate or low-priority the transaction is.</p>
+  <p>mempool.texitcoin.org uses multiple Texitcoin nodes to obtain data: some with the default 300MB mempool memory limit (call these Small Nodes) and others with a much larger mempool memory limit (call these Big Nodes).</p>
+  <p>Many nodes on the Texitcoin network are configured to run with the default 300MB mempool memory setting. When all 300MB of memory are used up, such nodes will reject transactions below a certain threshold feerate. Running Small Nodes allows mempool.texitcoin.org to tell you what this threshold feerate is—this is the "Purging" feerate that shows on the front page when mempools are full, which you can use to be reasonably sure that your transaction will be widely propagated.</p>
+    <p>Big Node mempools are so big that they don't need to reject (or purge) transactions. Such nodes allow for mempool.texitcoin.org to provide you with information on any pending transaction it has received—no matter how congested the mempool is, and no matter how low-feerate or low-priority the transaction is.</p>
 </ng-template>
 
 <ng-template type="what-is-memory-usage">
   <p>Memory usage on the front page refers to the real-time amount of system memory used by a Texitcoin node's mempool. This memory usage number is always higher than the total size of all pending transactions in the mempool due to indexes, pointers, and other overhead used by Texitcoin Core for storage and processing.</p>
-  <p>txcmempool.com shows the memory usage of a Texitcoin node that has a very high mempool memory limit. As a result, when mempools fill up, you may notice memory usage on txcmempool.com go beyond 300MB. This is not a mistake—this memory usage figure is high because it's for a Texitcoin node that isn't rejecting (or evicting) transactions. Consider it to be another data point to give you an idea of how congested the mempool is relative to the default memory limit of 300MB.</p>
+  <p>mempool.texitcoin.org shows the memory usage of a Texitcoin node that has a very high mempool memory limit. As a result, when mempools fill up, you may notice memory usage on mempool.texitcoin.org go beyond 300MB. This is not a mistake—this memory usage figure is high because it's for a Texitcoin node that isn't rejecting (or evicting) transactions. Consider it to be another data point to give you an idea of how congested the mempool is relative to the default memory limit of 300MB.</p>
   <p>A Texitcoin node running the default 300MB mempool memory limit, like most Raspberry Pi nodes, will never go past 300MB of memory usage.</p>
 </ng-template>
 
@@ -296,7 +296,7 @@
     <li><span class="block-audit-highlight-color removed">■</span><code>Removed</code><p>A transaction is highlighted bright pink if it is present in the expected block, not present in the actual block, and qualifies as neither recently-broadcasted nor marginal-fee. In other words, it has been in the mempool long enough to be widely propagated and has a feerate that is well within the range expected for the block. There is a chance such a transaction may have been intentionally excluded from the block.<p>Removed transactions do negatively affect <a [routerLink]="['/docs/faq' | relativeUrl]" fragment="what-is-block-health">block health</a>.</p></li>
   </ul>
   <p>See how results of the block audit are used to devise the block health score <a [routerLink]="['/docs/faq' | relativeUrl]" fragment="what-is-block-health">below</a>.</p>
-    <p class='note'>Because of this feature's resource usage and availability requirements, it is only supported on official txcmempool.com instances.</p>
+    <p class='note'>Because of this feature's resource usage and availability requirements, it is only supported on official mempool.texitcoin.org instances.</p>
 </ng-template>
 
 <ng-template type="what-is-block-health">
@@ -311,7 +311,7 @@
   </ul>
   <p>As a result, block health is <i>not</i> intended to be a measure of how closely an expected block resembles an actual block. The actual block can be vastly different from the expected block, but if no transactions appear to be intentionally excluded, it will have a high health rating (<a [routerLink]="['/block/0000000000000000000515e202c8ae73c8155fc472422d7593af87aa74f2cf3d']">extreme example</a>).</p>
   <p>See more context in our FAQ on <a [routerLink]="['/docs/faq' | relativeUrl]" fragment="how-do-block-audits-work">block audits</a>.</p>
-    <p class='note'>Because of this feature's resource usage and availability requirements, it is only supported on official txcmempool.com instances.</p>
+    <p class='note'>Because of this feature's resource usage and availability requirements, it is only supported on official mempool.texitcoin.org instances.</p>
 </ng-template>
 
 <ng-template type="how-do-mempool-goggles-work">
@@ -414,7 +414,7 @@
   <p>Most transactions use more of the weight limit than the sigop limit. However, some transactions use a disproportionate number of sigops compared to their weight.</p>
   <p>To account for this, Texitcoin Core calculates and uses an "adjusted vsize" equal 5 times the number of sigops, or the unadjusted vsize, whichever is larger.</p>
   <p>Then, during block template construction, Texitcoin Core selects transactions in descending order of fee rate measured in satoshis per <i>adjusted vsize</i></p>
-  <p>On txcmempool.com, effective fee rates for unconfirmed transactions are also measured in terms of satoshis per adjusted vsize, after accounting for CPFP relationships and other dependencies.</p>
+  <p>On mempool.texitcoin.org, effective fee rates for unconfirmed transactions are also measured in terms of satoshis per adjusted vsize, after accounting for CPFP relationships and other dependencies.</p>
 </ng-template>
 
 <ng-template type="why-do-the-projected-block-fee-ranges-overlap">
